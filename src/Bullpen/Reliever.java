@@ -1,24 +1,21 @@
 package Bullpen;
 
+import Main.BallPlayer;
+
 public abstract class Reliever {
-	protected String name;
-	boolean power;
-	double length;
+	BallPlayer player;
 	
-	public void Info() {
-		System.out.println("Type: " + name);
-		System.out.println("Will be pitching for " + length + " innings");
+	public String Warmup() {
+		String print = "The pitcher is warming up";
+		System.out.println(print);
+		return print;
 	}
 	
-	public void Warmup() {
-		System.out.println("The pitcher is warming up");
+	public String EnterGame() {
+		String print = "He is jogging to the mound!";
+		System.out.println(print);
+		return print;
 	}
-	
-	public void CallIn() {
-		System.out.println("Call in the reliever!");
-	}
-	
-	public void Complete() {
-		System.out.println();
-	}
+
+	public abstract String PlayBall();
 }

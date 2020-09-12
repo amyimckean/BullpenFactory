@@ -4,21 +4,23 @@ import Bullpen.*;
 
 public class SeattleMarinersTeam extends Bullpen {
 	
-	public Reliever CallBullpen(String reliever) {
+	public Reliever CallBullpenFactoryMethod(String reliever) {
+		RelieverFactory factory = new SeattleRelieverFactory();
+		
 		if(reliever == "Closer") {
-			return new Closer();
+			return new Closer(factory);
 		}
 		else if (reliever == "Long") {
-			return new LongReliever();
+			return new LongReliever(factory);
 		}
 		else if(reliever == "Power") {
-			return new Power();
+			return new Power(factory);
 		}
 		else if(reliever == "Situational") {
-			return new Situational();
+			return new Situational(factory);
 		}
 		else {
-			return new Setup();
+			return new Setup(factory);
 		}
 	}
 }

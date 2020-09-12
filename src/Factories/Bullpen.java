@@ -5,13 +5,13 @@ import Bullpen.Reliever;
 public abstract class Bullpen {
 
 	public Reliever GetReliever(String type) {
-		Reliever reliever = CallBullpen(type);
-		reliever.Info();
+		Reliever reliever = CallBullpenFactoryMethod(type);
 		reliever.Warmup();
-		reliever.CallIn();
-		reliever.Complete();
+		reliever.EnterGame();
+		reliever.PlayBall();
+		System.out.println();
 		return reliever;
 	}
 	
-	abstract Reliever CallBullpen(String type);
+	abstract Reliever CallBullpenFactoryMethod(String type);
 }
